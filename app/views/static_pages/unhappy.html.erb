@@ -1,12 +1,16 @@
-<h1>UNHAPPY WORD FACTORY</h1>
+<h1 class="text-3xl font-extrabold text-center mb-8">UNHAPPY WORD FACTORY</h1>
 
-<div id="unhappy-word-box">
+<!-- ランダムに不幸な言葉を表示するボックス -->
+<div id="unhappy-word-box" class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
   <% if @unhappy_word.present? %>
-    <p><%= @unhappy_word %></p>
+    <p class="text-xl font-semibold text-gray-800"><%= @unhappy_word %></p>
   <% else %>
-    <p>さぁ幸せになろう</p>
+    <p class="text-xl font-semibold text-gray-600">さぁ幸せになろう</p>
   <% end %>
 </div>
 
-<%= button_to 'つらいよ…', static_pages_random_unhappy_word_path, method: :post, remote: true, class: 'btn btn-danger mt-3' %>
-<%= link_to '幸せを取り戻すんだ', root_path, class: 'btn btn-success mt-3' %>
+<!-- つらいよ…ボタン -->
+<%= button_to 'つらいよ…', static_pages_random_unhappy_word_path, method: :post, remote: true, class: 'mt-6 px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-full transition duration-300' %>
+
+<!-- 幸せを取り戻すんだリンク -->
+<%= link_to '幸せを取り戻すんだ', root_path, class: 'mt-3 px-8 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-full transition duration-300' %>

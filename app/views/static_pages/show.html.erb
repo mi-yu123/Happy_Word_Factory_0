@@ -1,16 +1,16 @@
-<h1>HAPPY WORD FOR YOU</h1>
+<h1 class="text-3xl font-extrabold text-center mb-8">HAPPY WORD FOR YOU</h1>
 
 <!-- ランダムに言葉を表示するボックス -->
-<div id="word-box">
+<div id="word-box" class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
   <% if @random_word.present? %>
-    <p><%= @random_word %></p>
+    <p class="text-xl font-semibold text-gray-800"><%= @random_word %></p>
   <% else %>
-    <p>幸せは時として人を狂わせる。</p>
+    <p class="text-xl font-semibold text-gray-600">幸せは時として人を狂わせる。</p>
   <% end %>
 </div>
 
 <!-- 幸せになるボタン -->
-<%= button_to 'CREATE HAPPY', static_pages_random_word_path, method: :post, remote: true, class: 'btn btn-success' %>
+<%= button_to 'CREATE HAPPY', static_pages_random_word_path, method: :post, remote: true, class: 'mt-6 px-8 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-full transition duration-300' %>
 
 <!-- 疲れちゃったボタン -->
-<%= link_to '疲れちゃった', static_pages_unhappy_path, class: 'btn btn-danger mt-3' %>
+<%= link_to '疲れちゃった', static_pages_unhappy_path, class: 'mt-3 px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-full transition duration-300' %>
