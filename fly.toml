@@ -1,0 +1,21 @@
+# fly.toml app configuration file generated for happy-word-factory on 2024-12-18T12:15:41+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'happy-word-factory'
+primary_region = 'nrt'
+
+[build]
+  dockerfile = './Dockerfile'
+
+[http_service]
+  internal_port = 80
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  size = 'shared-cpu-1x'
