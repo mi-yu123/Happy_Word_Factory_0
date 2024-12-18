@@ -1,0 +1,15 @@
+<h1>幸せを支配するもの</h1>
+
+<%= form_with url: admin_login_path, method: :post, local: true, turbo: false do |form| %>
+  <div>
+    <%= form.label :email, "メールアドレス" %>
+    <%= form.text_field :email, required: true %>
+  </div>
+  <div>
+    <%= form.label :password, "パスワード" %>
+    <%= form.password_field :password, required: true %>
+  </div>
+  <div>
+    <%= form.submit "ログイン" %>
+  </div>
+<% end %>

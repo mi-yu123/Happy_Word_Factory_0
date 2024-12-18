@@ -1,0 +1,10 @@
+<h1>Unhappy Word <%= action_name == 'new' ? '作成' : '編集' %></h1>
+
+<%= form_with model: @unhappy, url: action_name == 'new' ? admin_unhappies_path : admin_unhappy_path(@unhappy), local: true do |form| %>
+  <div>
+    <%= form.label :text, 'テキスト' %>
+    <%= form.text_field :text, class: 'form-control' %>
+  </div>
+
+  <%= form.submit class: 'btn btn-success' %>
+<% end %>
