@@ -1,0 +1,12 @@
+<h1>UNHAPPY WORD FACTORY</h1>
+
+<div id="unhappy-word-box">
+  <% if @unhappy_word.present? %>
+    <p><%= @unhappy_word %></p>
+  <% else %>
+    <p>さぁ幸せになろう</p>
+  <% end %>
+</div>
+
+<%= button_to 'つらいよ…', static_pages_random_unhappy_word_path, method: :post, remote: true, class: 'btn btn-danger mt-3' %>
+<%= link_to '幸せを取り戻すんだ', root_path, class: 'btn btn-success mt-3' %>

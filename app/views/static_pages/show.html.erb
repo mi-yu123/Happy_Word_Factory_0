@@ -1,0 +1,16 @@
+<h1>HAPPY WORD FOR YOU</h1>
+
+<!-- ランダムに言葉を表示するボックス -->
+<div id="word-box">
+  <% if @random_word.present? %>
+    <p><%= @random_word %></p>
+  <% else %>
+    <p>幸せは時として人を狂わせる。</p>
+  <% end %>
+</div>
+
+<!-- 幸せになるボタン -->
+<%= button_to 'CREATE HAPPY', static_pages_random_word_path, method: :post, remote: true, class: 'btn btn-success' %>
+
+<!-- 疲れちゃったボタン -->
+<%= link_to '疲れちゃった', static_pages_unhappy_path, class: 'btn btn-danger mt-3' %>
